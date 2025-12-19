@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 backend/listings/
 .env
+# AI / runtime outputs
+backend/response_*.json
+backend/listings/
