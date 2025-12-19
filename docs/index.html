@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FurnitureFlip AI — Dynamic Listing Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🪑 FurnitureFlip AI</h1>
+    <p>
+      Dynamic furniture listing form powered by a local AI agent (Ollama).
+    </p>
+
+    <!-- ===============================
+         Backend API Configuration
+         =============================== -->
+    <div class="api-config">
+      <label for="apiBaseInput">Backend API URL</label>
+      <input
+        id="apiBaseInput"
+        type="text"
+        placeholder="http://127.0.0.1:8000"
+      />
+      <button id="saveApiBtn">Save API URL</button>
+      <small>
+        Example: <code>http://127.0.0.1:8000</code><br />
+        (Backend must be running locally)
+      </small>
+    </div>
+
+    <hr />
+
+    <!-- ===============================
+         Category Selection
+         =============================== -->
+    <label for="category">Choose furniture category</label>
+    <select id="category">
+      <option>Sofa</option>
+      <option>Chair</option>
+      <option>Table</option>
+      <option>Bed</option>
+      <option>Other</option>
+    </select>
+
+    <button id="build">Build Form</button>
+
+    <!-- ===============================
+         Dynamic Form Area
+         =============================== -->
+    <h2 id="formTitle"></h2>
+    <form id="dynamicForm"></form>
+
+    <button id="submitBtn" disabled>Submit Listing</button>
+
+    <!-- ===============================
+         Output / Debug Area
+         =============================== -->
+    <h3>Output</h3>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- ===============================
+       Small inline script to wire API config UI
+       =============================== -->
+  <script>
+    const apiInput = document.getElementById("apiBaseInput");
+    const saveBtn = document.getElementById("saveApiBtn");
+
+    // Load saved API_BASE into input
+    const savedApi = localStorage.getItem("API_BASE");
+    if (savedApi) {
+      apiInput.value = savedApi;
+    }
+
+    saveBtn.addEventListener("click", () => {
+      const val = apiInput.value.trim();
+      if (!val) {
+        alert("Please enter a valid API URL");
+        return;
+      }
+      localStorage.setItem("API_BASE", val);
+      alert("API URL saved. Reload the page to apply.");
+    });
+  </script>
+
+</body>
+</html>

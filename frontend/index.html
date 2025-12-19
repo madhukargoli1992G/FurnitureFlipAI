@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Sell Furniture</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Sell Furniture</h1>
+
+    <label>Choose category</label>
+    <select id="category">
+      <option>Sofa</option>
+      <option>Chair</option>
+      <option>Table</option>
+      <option>Bed</option>
+      <option>Other</option>
+    </select>
+
+    <button id="build">Build Form</button>
+
+    <h2 id="formTitle"></h2>
+    <form id="dynamicForm"></form>
+
+    <button id="submitBtn" disabled>Submit Listing</button>
+
+    <pre id="output"></pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

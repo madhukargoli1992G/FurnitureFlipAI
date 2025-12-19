@@ -1,0 +1,7 @@
+body { font-family: Arial; background: #fafafa; }
+.container { max-width: 720px; margin: 40px auto; padding: 16px; background: white; border-radius: 12px; }
+.row { margin-top: 12px; }
+label { display:block; font-weight: 600; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+button { margin-top: 14px; padding: 10px 14px; border-radius: 10px; border: none; cursor: pointer; }
+pre { margin-top: 16px; background: #f3f3f3; padding: 12px; border-radius: 10px; }
